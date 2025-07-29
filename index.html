@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>کلاس اور کورس منتخب کریں - تفصیلی تعلیمی رہنما</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
+
+    body {
+      font-family: 'Almarai', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px;
+      color: #f0f0f5;
+      direction: rtl;
+      user-select: none;
+    }
+    .container {
+      background: rgba(255 255 255 / 0.15);
+      backdrop-filter: blur(25px);
+      border-radius: 25px;
+      box-shadow: 0 8px 40px rgba(31, 38, 135, 0.45);
+      padding: 40px 50px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255 255 255 / 0.2);
+      transition: transform 0.3s ease;
+    }
+    .container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 50px rgba(31, 38, 135, 0.6);
+    }
+    h1 {
+      margin-bottom: 40px;
+      font-size: 3rem;
+      font-weight: 900;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.35);
+      user-select: none;
+    }
+    select {
+      font-size: 1.4rem;
+      padding: 15px 20px;
+      margin: 15px 0 35px;
+      width: 100%;
+      border-radius: 15px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: rgba(255 255 255 / 0.9);
+      color: #333;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: box-shadow 0.3s ease;
+      user-select: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      background-size: 20px 20px;
+    }
+    select:hover, select:focus {
+      box-shadow: 0 7px 22px rgba(0,0,0,0.3);
+    }
+    #details {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #e1e1f7;
+      min-height: 180px;
+      background: rgba(0 0 0 / 0.3);
+      padding: 30px 35px;
+      border-radius: 20px;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+      user-select: text;
+      white-space: pre-wrap;
+      text-align: right;
+      font-family: 'Almarai', sans-serif;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: rgba(255 255 255 / 0.6);
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <h1>کلاس اور کورس منتخب کریں</h1>
+    <select id="languageSelect" aria-label="زبان منتخب کریں">
+      <option value="ur" selected>اردو</option>
+      <option value="en">English</option>
+    </select>
+
+    <select id="classSelect" aria-label="کلاس منتخب کریں">
+      <option value="" disabled selected>اپنی کلاس منتخب کریں</option>
+      <option value="9th">9th / 9ویں</option>
+      <option value="10th">10th / 10ویں</option>
+      <option value="11th">11th / 11ویں</option>
+      <option value="12th">12th / 12ویں</option>
+      <option value="13th">13th / 13ویں</option>
+      <option value="14th">14th / 14ویں</option>
+    </select>
+
+    <select id="courseSelect" disabled aria-label="کورس منتخب کریں">
+      <option value="" disabled selected>پہلے کلاس منتخب کریں</option>
+    </select>
+
+    <div id="details" aria-live="polite" aria-atomic="true">کورس کی تفصیل یہاں دکھائی جائے گی۔</div>
+
+    <div class="footer">
+      <p>تعلیمی رہنما &copy; 2025</p>
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      ur: {
+        9th: {
+          "Computer": {
+            desc: "9ویں جماعت میں کمپیوٹر سائنس کا کورس بنیادی کمپیوٹر اصول، پروگرامنگ کی شروعات، اور عملی مشقوں پر مشتمل ہوتا ہے۔ آپ کمپیوٹر کے بنیادی تصورات اور استعمال سے واقف ہوں گے۔",
+            career: "یہ کورس پڑھ کر آپ کمپیوٹر آپریٹر، ٹیکنیکل اسسٹنٹ، یا مزید اعلی تعلیم کے لیے تیار ہو سکتے ہیں۔"
+          },
+          "Biology": {
+            desc: "9ویں جماعت کی حیاتیات میں جسمانی نظام، حیاتیاتی عمل، اور ماحولیات کی تفصیلی تعلیم دی جاتی ہے۔ یہ کورس سائنسی اور طبی فیلڈز کے لیے اہم ہے۔",
+            career: "اس کورس سے آپ بایولوجسٹ، ڈاکٹر، یا حیاتیاتی تحقیق میں جانے کے لیے بنیاد حاصل کرتے ہیں۔"
+          }
+        },
+        10th: {
+          "Computer": {
+            desc: "10ویں جماعت کمپیوٹر سائنس میں ڈیٹا بیس، پروگرامنگ، اور نیٹ ورکنگ کا تعارف شامل ہوتا ہے۔ یہ کورس پیشہ ورانہ آئی ٹی کی تعلیم کی بنیاد رکھتا ہے۔",
+            career: "اس کورس کے ذریعے آپ سافٹ ویئر ڈویلپمنٹ یا نیٹ ورکنگ میں کریئر بنا سکتے ہیں۔"
+          },
+          "Biology": {
+            desc: "10ویں جماعت کی حیاتیات میں جینیات، انسانی جسم کے نظام، اور جدید حیاتیاتی تکنیکوں کا تعارف ہوتا ہے۔",
+            career: "یہ کورس میڈیکل فیلڈ، تحقیق، اور بایوٹیکنالوجی کے لیے اہم ہے۔"
+          }
+        },
+        11th: {
+          "ICS": {
+            desc: "11ویں آئی سی ایس کورس میں کمپیوٹر پروگرامنگ، ڈیٹا اسٹرکچر، اور سافٹ ویئر انجینئرنگ کی بنیادی تعلیم دی جاتی ہے۔",
+            career: "آپ اس کے ذریعے سافٹ ویئر انجینئر، ویب ڈویلپر، یا آئی ٹی پروفیشنل بن سکتے ہیں۔"
+          },
+          "FSC": {
+            desc: "11ویں ایف ایس سی میں کیمسٹری، فزکس، اور حیاتیات شامل ہیں جو طبی اور سائنسی شعبے کے لیے ضروری ہیں۔",
+            career: "یہ کورس ڈاکٹر، انجینئر، یا سائنسدان بننے کی بنیاد فراہم کرتا ہے۔"
+          },
+          "ICOM": {
+            desc: "11ویں آئکوم میں اکاؤنٹنگ، بزنس اسٹڈیز، اور اقتصادیات کی تعلیم دی جاتی ہے۔",
+            career: "آپ بزنس، اکاؤنٹنگ، اور فنانس میں پروفیشنل بن سکتے ہیں۔"
+          },
+          "FA.IT": {
+            desc: "11ویں ایف اے آئی ٹی میں فائن آرٹس کے ساتھ انفارمیشن ٹیکنالوجی کی تعلیم دی جاتی ہے۔",
+            career: "یہ کورس گرافک ڈیزائنر، ویب ڈویلپر، اور ملٹی میڈیا پروفیشنل کے لیے بہترین ہے۔"
+          }
+        },
+        12th: {
+          "ICS": {
+            desc: "12ویں آئی سی ایس میں پروگرامنگ لینگویجز، ویب ٹیکنالوجیز، اور سسٹم ڈویلپمنٹ کی تفصیلی تعلیم شامل ہے۔",
+            career: "آپ آئی ٹی انڈسٹری میں سافٹ ویئر ڈویلپمنٹ، سائبر سیکیورٹی، یا ڈیٹا سائنس میں جا سکتے ہیں۔"
+          },
+          "FSC": {
+            desc: "12ویں ایف ایس سی میں ایڈوانس کیمسٹری، مالیکیولر بایولوجی، اور دیگر سائنس مضامین شامل ہیں۔",
+            career: "یہ میڈیکل، ریسرچ، یا انجینئرنگ میں کریئر کے لیے اہم ہے۔"
+          },
+          "ICOM": {
+            desc: "12ویں آئکوم میں کاروباری مینجمنٹ، فنانس، اور مارکیٹنگ کے موضوعات شامل ہیں۔",
+            career: "آپ کاروبار، فنانس، یا مارکیٹنگ میں مہارت حاصل کر کے کامیاب بن سکتے ہیں۔"
+          },
+          "FA.IT": {
+            desc: "12ویں ایف اے آئی ٹی میں فائن آرٹس اور انفارمیشن ٹیکنالوجی کے جدید موضوعات شامل ہیں۔",
+            career: "یہ کورس آپ کو ملٹی میڈیا، گرافک ڈیزائن، اور ویب ڈیویلپمنٹ کے لیے تیار کرتا ہے۔"
+          }
+        },
+        13th: {
+          "Diploma": {
+            desc: "13ویں ڈپلومہ کورس میں تکنیکی اور پیشہ ورانہ تعلیم دی جاتی ہے تاکہ آپ کسی خاص فیلڈ میں مہارت حاصل کر سکیں۔",
+            career: "آپ تکنیکی شعبوں جیسے الیکٹریکل، میکانیکل، یا کمپیوٹر ٹیکنالوجی میں مہارت حاصل کر سکتے ہیں۔"
+          }
+        },
+        14th: {
+          "Certificate": {
+            desc: "14ویں سرٹیفکیٹ کورسز مختصر مدت کے ہوتے ہیں جو خاص مہارتیں سکھاتے ہیں جیسے کمپیوٹر، زبانیں، یا تکنیکی ہنر۔",
+            career: "یہ کورس فوری روزگار یا مزید تعلیم کے لیے مفید ہے۔"
+          }
+        }
+      },
+      en: {
+        9th: {
+          "Computer": {
+            desc: "The 9th-grade computer science course covers basic computer principles, introduction to programming, and practical exercises.",
+            career: "After this course, you can become a computer operator, technical assistant, or prepare for higher studies."
+          },
+          "Biology": {
+            desc: "9th-grade biology teaches body systems, biological processes, and environment studies.",
+            career: "This course provides a foundation for biologists, doctors, or scientific researchers."
+          }
+        },
+        10th: {
+          "Computer": {
+            desc: "The 10th-grade computer course introduces databases, programming, and networking basics.",
+            career: "This course prepares you for careers in software development or networking."
+          },
+          "Biology": {
+            desc: "10th-grade biology covers genetics, human body systems, and modern biological techniques.",
+            career: "Important for medical, research, and biotechnology fields."
+          }
+        },
+        11th: {
+          "ICS": {
+            desc: "11th ICS includes programming, data structures, and software engineering fundamentals.",
+            career: "You can become a software engineer, web developer, or IT professional."
+          },
+          "FSC": {
+            desc: "11th FSC covers chemistry, physics, and biology essential for medical and scientific careers.",
+            career: "Provides a foundation for doctors, engineers, and scientists."
+          },
+          "ICOM": {
+            desc: "11th ICOM teaches accounting, business studies, and economics.",
+            career: "Ideal for careers in business, accounting, and finance."
+          },
+          "FA.IT": {
+            desc: "11th FA.IT combines fine arts with information technology education.",
+            career: "Great for graphic designers, web developers, and multimedia professionals."
+          }
+        },
+        12th: {
+          "ICS": {
+            desc: "12th ICS teaches programming languages, web technologies, and system development in detail.",
+            career: "You can enter IT industries like software development, cybersecurity, or data science."
+          },
+          "FSC": {
+            desc: "12th FSC includes advanced chemistry, molecular biology, and other science subjects.",
+            career: "Important for medical, research, or engineering careers."
+          },
+          "ICOM": {
+            desc: "12th ICOM covers business management, finance, and marketing topics.",
+            career: "Develop expertise for success in business, finance, or marketing."
+          },
+          "FA.IT": {
+            desc: "12th FA.IT includes modern topics in fine arts and information technology.",
+            career: "Prepares you for multimedia, graphic design, and web development."
+          }
+        },
+        13th: {
+          "Diploma": {
+            desc: "13th Diploma courses provide technical and professional education to gain expertise in a field.",
+            career: "You can specialize in technical fields like electrical, mechanical, or computer technology."
+          }
+        },
+        14th: {
+          "Certificate": {
+            desc: "14th Certificate courses are short-term and teach specific skills such as computer literacy, languages, or technical skills.",
+            career: "Useful for quick employment or further education."
+          }
+        }
+      }
+    };
+
+    const langSelect = document.getElementById('languageSelect');
+    const classSelect = document.getElementById('classSelect');
+    const courseSelect = document.getElementById('courseSelect');
+    const detailsDiv = document.getElementById('details');
+
+    function updateCourseOptions() {
+      const lang = langSelect.value;
+      const cls = classSelect.value;
+      detailsDiv.textContent = lang === 'ur' ? "کورس کی تفصیل یہاں دکھائی جائے گی۔" : "Course details will appear here.";
+      courseSelect.innerHTML = '';
+      courseSelect.disabled = !cls;
+
+      if (!cls) {
+        const opt = document.createElement('option');
+        opt.text = lang === 'ur' ? "پہلے کلاس منتخب کریں" : "Select class first";
+        opt.disabled = true;
+        opt.selected = true;
+        courseSelect.add(opt);
+        return;
+      }
+
+      const courses = data[lang][cls];
+      const defaultOpt = document.createElement('option');
+      defaultOpt.text = lang === 'ur' ? "اپنا کورس منتخب کریں" : "Select your course";
+      defaultOpt.disabled = true;
+      defaultOpt.selected = true;
+      courseSelect.add(defaultOpt);
+
+      for (const course in courses) {
+        const opt = document.createElement('option');
+        opt.value = course;
+        opt.text = course;
+        courseSelect.add(opt);
+      }
+    }
+
+    function updateDetails() {
+      const lang = langSelect.value;
+     
